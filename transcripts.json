@@ -1,0 +1,824 @@
+[
+  {
+    "video_id": "7LH01TSqou8",
+    "transcript": [
+      {
+        "timestamp": "00:00",
+        "text": "the visitor today is Dr. David Hendriks, who is a uh recent PhD graduate from the University of Surrey uh David uh is an astrophysicist specializing in graphical formation for primarily stars and population synthesis studies."
+      },
+      {
+        "timestamp": "00:30",
+        "text": "He earned his Bachelor's and Master's degrees uh undergraduate in astrophysics from the University of Amsterdam and recently completed his PhD at the University of Surrey. The Master student had uh been working in Amsterdam. "
+      },
+      {
+        "timestamp": "01:00",
+        "text": "He started working on population studies uh population synthesis since PhD was about primarily populations mass transfer and compact object information. "
+      },
+      {
+        "timestamp": "01:30",
+        "text": "Currently David is analyzing data science projects using techniques like thermal turning multi-core. He is actively seeking postdoctoral positions aiming to continue contributing to astrophysics. "
+      },
+      {
+        "timestamp": "02:00",
+        "text": "So uh thank you and great. All right, hi. I'm David, thank you for this uh introduction. Um I'm going to talk about pulsational pair-instability supernovae in gravitational wave and electromagnetic transients uh I see some familiar faces here and "
+      },
+      {
+        "timestamp": "02:30",
+        "text": "you have seen this presentation already. I've added some things. I've taken some things out uh But so uh you're maybe familiar with this story. uh It's been a couple of years now that uh there has been gravitational wave observations, um since 2015. "
+      },
+      {
+        "timestamp": "03:00",
+        "text": "There has been gravitational wave observations and specifically black hole binaries, mostly uh that have been observed and as you see in in this graph on the left especially in O3, things have really started to ramp up uh and we are definitely getting enough observations "
+      },
+      {
+        "timestamp": "03:30",
+        "text": "for statistics of these observations. It's not only one or two observations, it's getting distribution level. Um especially O4 is currently ongoing, that will change this graph up to another order of magnitude higher in detection rate and uh uh so we're we're really at the at the forefront of like a new era of like gravitational wave observations. "
+      },
+      {
+        "timestamp": "04:00",
+        "text": "Um that these observations allow us then to make distributions of the of the properties of these of these mergers and as I said it's mostly binary black hole mergers that we find and what we can do is we can look at for example the distribution of the primary masses of these systems. Primary masses in this case, "
+      },
+      {
+        "timestamp": "04:30",
+        "text": "or with means that it's like the most massive black hole of the of the system and there are some interesting features that we can see here. Uh some of them we expect to see and some of them we expect to see in a different place. And specifically uh the the peak that we see in this region here. Um "
+      },
+      {
+        "timestamp": "05:00",
+        "text": "is interesting because it's found in a location that is not entirely expected. It's a lower mass than we expected from um well from from physics and stellar evolution we know and my my quest here is, I'm going to try to reproduce the bump that we find in this distribution. "
+      },
+      {
+        "timestamp": "05:30",
+        "text": "And I'm going to try to if I cannot reproduce it, how can I change the physical assumptions so that it does match this bump? And what does that then imply about stellar evolution and other astrophysical properties down the line. Um So I'm talking about gravitational wave mergers. There's a whole bunch of different types and these uh they "
+      },
+      {
+        "timestamp": "06:00",
+        "text": "originate in different environments and they can probe different properties of the source and they are affected by a whole bunch of physical processes. And I specifically I'm going to look at the counterparts for at the inspiral wave signal as you can see here. There's a whole large spectrum of gravitational waves and we're really just at the at the start of an era of gravitational wave observations. "
+      },
+      {
+        "timestamp": "06:30",
+        "text": "Uh relatively easiest one to observe is the inspiral phase and that's what I'm going to talk about today. Uh And that is uh right on the interface here. Terrestrial interferometers, space interferometers, maybe you've heard that the LISA project has been given green light uh which will be launched in a decade or so. That will be a space interferometer. "
+      },
+      {
+        "timestamp": "07:00",
+        "text": "Um that will give us access to a whole new uh sort of parameter space of mergers, new mass ranges basically. Um Right, so I'm going to talk about merging compact objects uh not about cosmological vibrations or supernova explosions that generate gravitational waves but "
+      },
+      {
+        "timestamp": "07:00",
+        "text": "there's basically no way of to start to retain as much mass as it needs to form a black hole like this so these two are the are the the most important players that we should care about now for single stars but binary system is they introduce a whole extra set of things right"
+      },
+      {
+        "timestamp": "07:30",
+        "text": "Now we know that a binary system is two stars that are gravitationally bound to each other um they form in associations but if they're generally formed in the field they'll live relatively isolated lives um and they their properties are distributed by distributions that we start to understand to bit or at least observe and we can work with this"
+      },
+      {
+        "timestamp": "08:00",
+        "text": "things like the IMF for single stars we use it for binary stars as well but then there's period and mass ratio distributions that basically inform us about what the distribution of these properties of the binary systems is and we can"
+      },
+      {
+        "timestamp": "08:30",
+        "text": "observe or infer them and then we can use this as initial distributions for our binary system um the difference between binary systems and single stars other than well because they come in pairs they can start to influence each other and it's predominantly the influence of the transfer of material between the two stars that really changes the game"
+      },
+      {
+        "timestamp": "09:00",
+        "text": "Uh there's tidal interactions like like the Earth and the Moon have um and tidal interactions are very important but if mass is being transferred back and forth uh that can really affect the system very strongly um so this is something that we have to take care of or take into account for this"
+      },
+      {
+        "timestamp": "09:30",
+        "text": "uh but importantly for me binary stars become binary black holes and this is the uh that's why I'm looking at these binary stars friends Uh one point I want to mention about Roche lobe overflow or the transfer of material I'm not sure if this is covered in in undergrad courses here or if people work on this"
+      },
+      {
+        "timestamp": "10:00",
+        "text": "but very briefly if a star uh during its life star evolves and it changes it's size now single stars are in that sense not hindered by any any anything in they can grow sort of indefinitely large uh but if if"
+      },
+      {
+        "timestamp": "10:30",
+        "text": "material becomes unbound at least from M1 and can flow between the two stars via a uh accretion stream which in an idealized situation looks like this and then it either directly impacts the star or forms an accretion disk This interaction"
+      },
+      {
+        "timestamp": "11:00",
+        "text": "there is a lot of stuff going on here and that it's it's the key player to to determining the the outcome of binary stars specifically is that this this transfer of mass can be is become it can be stable or it can be unstable"
+      },
+      {
+        "timestamp": "11:30",
+        "text": "and in unstable mass transfer basically means that any extra bit of mass that is transferred leads to more mass being transferred and it's a runaway process that just ends in uh just two stars merging or uh or common envelope that shrinks the system significantly and that's something that I will show you in my results that"
+      },
+      {
+        "timestamp": "12:00",
+        "text": "these two different scenarios they they probe a different regime of mass um but about population synthesis is that I've got all these initial distributions of binary systems all these interactions that we can care about but now I want to model binary systems and calculate how many black holes we see and which different proper-"
+      },
+      {
+        "timestamp": "12:30",
+        "text": "ties there are um and I can do this with the with a technique called population synthesis and it basically means that I want to synthetically model a whole bunch of stars uh the synthesis part means that I'm not solving the full stellar equations but I'm taking sort shortcuts either using interpolation tables or analytic fits to stellar evolution"
+      },
+      {
+        "timestamp": "13:00",
+        "text": "but that allows me to evolve stars very quickly so if you want to do a full detailed stellar evolution that takes quite a while but if I do this in a uh synthetic way then it uh speeds things up by a million million and then I can do a lot of stars very quickly"
+      },
+      {
+        "timestamp": "13:30",
+        "text": "um because if we want to estimate the rates of something that's quite rare you we need to evolve a lot of stars to probe this uh this you know this event um right and so also what's interesting is that sort of a purpose but not really it's I've drawn it as a black box"
+      },
+      {
+        "timestamp": "13:59",
+        "text": "that it get some ingredients and some some configurations and I then I put some initial distribution in there and I get something back I mean we do know what's going into this evolutionary engine but there's so many processes that work in tandem with each other that it's still"
+      },
+      {
+        "timestamp": "14:00",
+        "text": "supernova types that I really care about is it's called pair instability or pulsation of pair instability supernova."
+      },
+      {
+        "timestamp": "14:00",
+        "text": "sometimes quite difficult to to estimate what's going to happen to a system of an initial configuration it's not always very clear so sometimes you just have to see what comes out and then starts to understand the relation between what in and what goes in and what comes out"
+      },
+      {
+        "timestamp": "14:30",
+        "text": "And it basically occurs for stars that are very massive about 35 solar masses."
+      },
+      {
+        "timestamp": "14:59",
+        "text": "after under like after the main sequence that basically they have a helium core which is quite evolved and that has to be 35 solar masses or higher."
+      },
+      {
+        "timestamp": "15:29",
+        "text": "and that means that initially they are quite a bit more massive than this."
+      },
+      {
+        "timestamp": "15:59",
+        "text": "What happens in these stars is that the the density and temperature are such that photons can interact with the with the surrounding plasma and create electron positron pairs even briefly but that removes the radiation pressure from the system."
+      },
+      {
+        "timestamp": "16:29",
+        "text": "And these stars at this stage in their life they are mainly held up by radiation pressure which is already a slightly on like quasi-stable state of a star."
+      },
+      {
+        "timestamp": "16:59",
+        "text": "If you then start to remove this extra pressure that's necessary for the stability then that can sometimes lead to a the instability a runaway um that makes the start collapse onto itself."
+      },
+      {
+        "timestamp": "17:29",
+        "text": "And that's basically going from two to three this collapse onto itself it heats things up so so much that it can ignite um a certain fuel and if there is enough oxygen in this case then that can lead to an explosion that's quite significant."
+      },
+      {
+        "timestamp": "17:59",
+        "text": "And this explosion can lead through three outcomes um I'm going to yeah so first for a the explosion is so strong that it disrupts the entire star."
+      },
+      {
+        "timestamp": "18:29",
+        "text": "And then you get a huge you know supernova remnant cloud but no remnant object no compact object in the center."
+      },
+      {
+        "timestamp": "18:59",
+        "text": "So there's no black hole at this point."
+      },
+      {
+        "timestamp": "19:29",
+        "text": "Or this explosion is not strong enough to remove all of the material but only some of the material and then you get this this effect of okay some mass is removed but not all of it."
+      },
+      {
+        "timestamp": "19:59",
+        "text": "Or the explosion is not strong enough to remove any mass and the star keeps collapsing onto itself This is only possible for the most massive stars."
+      },
+      {
+        "timestamp": "20:29",
+        "text": "And at this point I'm currently not considering these to be relevant to to my conquest like my quest here to to the to finding out where the peak comes from right."
+      },
+      {
+        "timestamp": "20:59",
+        "text": "I'm mostly concerned about these stars The that pulse that relieves behind the remnant and this pulsing behavior sort of sort of caps the maximum mass that the star that the maximum mass that the black hole can leave behind."
+      },
+      {
+        "timestamp": "21:00",
+        "text": "And then on the orange we see my distribution, what I predict on itself, not entirely bad, but there is a couple of things that we see here."
+      },
+      {
+        "timestamp": "21:29",
+        "text": "This process can occur a couple of times the the the center is very hot the it's cooling via neutrinos it's very efficient it starts to relax onto itself again."
+      },
+      {
+        "timestamp": "21:30",
+        "text": "Um, we see a peak at 10 solar masses, which more or less matches, but not entirely, which is already interesting."
+      },
+      {
+        "timestamp": "21:30",
+        "text": "And we see another peak, not as convincing and also not as dramatic at a location which is not the observed location."
+      },
+      {
+        "timestamp": "22:00",
+        "text": "And so at this point, there is something that's It's not matching up, right?"
+      },
+      {
+        "timestamp": "22:30",
+        "text": "This second panel basically shows that whatever uh black hole we find, what's the fraction of those black holes that actually formed through this mechanism that I've talked about."
+      },
+      {
+        "timestamp": "22:30",
+        "text": "And we see in this region all of the black holes that form in here are formed through this pulsational parent stability mechanism."
+      },
+      {
+        "timestamp": "23:00",
+        "text": "So indeed this This peak here is is caused by the pulsational parent stability."
+      },
+      {
+        "timestamp": "23:30",
+        "text": "And what the problem was everybody always thought that this peak at 35 solar mass was caused by parent stability supernova, and that's not what we're finding."
+      },
+      {
+        "timestamp": "23:30",
+        "text": "And now there is a bit of a of an issue uh or our input models wrong uh or do we need to change something or what or is this peak actually not caused by parent stability supernova."
+      },
+      {
+        "timestamp": "24:00",
+        "text": "That If it wouldn't be There's quite some implications down the line that I could go into Maybe at the questions."
+      },
+      {
+        "timestamp": "24:30",
+        "text": "But that would have quite some some conclusions basically, if it would not be caused by this."
+      },
+      {
+        "timestamp": "24:30",
+        "text": "Um Some extra things that are interesting here is that in in this panel we see the eccentricity of the black holes upon their formation."
+      },
+      {
+        "timestamp": "25:00",
+        "text": "And we see that from more or less 30 solar masses black holes that do merge in the lifetime of the universe, and that we can observe now, predominantly uh form very eccentric."
+      },
+      {
+        "timestamp": "25:00",
+        "text": "And this this high eccentricity basically leads to their merger time becoming a lot shorter than it normally would be."
+      },
+      {
+        "timestamp": "25:30",
+        "text": "So uh a circular binary takes longer to merge than an eccentric binary, because there is This this this eccentricity, where they come close to each other, which loses a lot of angular momentum through gravitational waves."
+      },
+      {
+        "timestamp": "25:30",
+        "text": "Uh So there is something going on that makes these systems merge."
+      },
+      {
+        "timestamp": "26:00",
+        "text": "Conversely, that means that there is some physics that we can test in this regime."
+      },
+      {
+        "timestamp": "26:00",
+        "text": "Now, uh because whatever causes this high eccentricity, at least in field stars, is caused by the by the supernova kick of the companion."
+      },
+      {
+        "timestamp": "26:30",
+        "text": "Because the black holes that form The primary mass black holes form so massive that they don't really kick anything, so it's the companion that kicks uh the system, with kick I mean there is an asymmetric uh removal of material from the star that leads to momentum being imparted on that star, needs to increasing eccentricity."
+      },
+      {
+        "timestamp": "26:30",
+        "text": "And that basically means that we can start using this area maybe as a way of testing what supernova kick models might work or not."
+      },
+      {
+        "timestamp": "27:00",
+        "text": "Um And then lastly, this panel here is the Roche lobe overflow type, which I alluded to earlier."
+      },
+      {
+        "timestamp": "27:00",
+        "text": "Some Some mass transfer is stable and some mass transfer is unstable."
+      },
+      {
+        "timestamp": "27:30",
+        "text": "And this um this unstable mass transfer, there is some some uncertainties isn't this?"
+      },
+      {
+        "timestamp": "27:30",
+        "text": "Because there is a lot of uncertainty in the um the requirements of this instability, and the models that we've been using are probably a little bit out of date, especially for these very massive stars."
+      },
+      {
+        "timestamp": "28:00",
+        "text": "leads to more or less mass loss."
+      },
+      {
+        "timestamp": "28:00",
+        "text": "And so we thought well, maybe if we just remove those systems that originate from the common envelope or unstable mass transfer."
+      },
+      {
+        "timestamp": "28:00",
+        "text": "Um That leads to at least the peak being matched matched a little bit better."
+      },
+      {
+        "timestamp": "28:00",
+        "text": "And now this isn't entirely fair, by just removing these systems, right? But what it does show is that the physics that goes into this stability criteria and the stability calculations may well have a big impact on whether this part here fits. And so whereas this high mass part can be used to constrain something about the eccentricity of the supernova kicks."
+      },
+      {
+        "timestamp": "28:00",
+        "text": "This lower part may be used for the mass transfer properties of these systems."
+      },
+      {
+        "timestamp": "28:00",
+        "text": "Those are all extra uh nice things that I found, but the main thing that I found is that whatever I put in here doesn't lead to a correct location for the peak."
+      },
+      {
+        "timestamp": "28:00",
+        "text": "It's It's about 20 solar masses to the right uh of what we needed to be, right?"
+      },
+      {
+        "timestamp": "28:00",
+        "text": "Now is there something we can do about this? Is there some uncertainty that goes into these models that we can start to wiggle around with uh maybe maybe some physical assumptions that are quite uncertain uh that we can invoke to say well let's introduce some extra changes in this and let's start putting things left or right? Well, yes."
+      },
+      {
+        "timestamp": "28:00",
+        "text": "Um, but most of the things that go into this, at least in the study that Rob Farmer did, uh seem to show that things were quite stable against these uncertainties. These uncertainties did not lead to a large range in a black hole masses, so what we see here is some numerical assumptions physical assumptions and environments that lead to uh a range of black hole masses within the the results from varying those those parameters basically."
+      },
+      {
+        "timestamp": "28:00",
+        "text": "The only big one that leads to a very large shift in the in the maximum black hole mass is the the rates and the rates, that means the the nuclear reaction rates of the relevant uh reactions, that's the carbon to oxygen uh reaction rates."
+      },
+      {
+        "timestamp": "28:00",
+        "text": "But um I was hoping for a little bit more wiggle room."
+      },
+      {
+        "timestamp": "28:00",
+        "text": "And uh I started looking a little bit further, and indeed the reaction rates are quite important."
+      },
+      {
+        "timestamp": "28:00",
+        "text": "And especially if you if you use better resolution then things start to shift a little bit even more more so than we we found before."
+      },
+      {
+        "timestamp": "28:00",
+        "text": "But also things like the rotation additional cooling and some uh convection and um well, there is there is a bit more wiggle room than we than we may have thought before."
+      },
+      {
+        "timestamp": "28:00",
+        "text": "And these these things that I'm listing here basically affect two different things: either it affects the CO core masses that undergo these explosions, as I said earlier, from a certain range, things start to explode or not."
+      },
+      {
+        "timestamp": "28:00",
+        "text": "So this first block will shift that to the left or the right."
+      },
+      {
+        "timestamp": "28:00",
+        "text": "And this second block is basically induces additional mass loss. So even uh the the range doesn't really change, but the explosion "
+      },
+      {
+        "timestamp": "28:30",
+        "text": "And there is a couple of here that I've uh put an asterisk too."
+      },
+      {
+        "timestamp": "28:30",
+        "text": "Uh, these asterisks indicate beyond standard model physics."
+      },
+      {
+        "timestamp": "29:00",
+        "text": "Um, so it's it's speculative but that might actually lead to a testable way of um excluding this beyond standard model regime that they that they use for example, the axion masses that they used for uh for this axion parent instability."
+      },
+      {
+        "timestamp": "29:30",
+        "text": "We could maybe use what we're finding here to exclude this or confirm what they're suggesting."
+      },
+      {
+        "timestamp": "29:30",
+        "text": "Um, that's a big stretch though, but uh so there is a couple of extra things that we can throw in the mix."
+      },
+      {
+        "timestamp": "30:00",
+        "text": "And one of these is indeed the axion instability, which is a very similar stellar instability, but it's not caused by the formation of electron positron pairs."
+      },
+      {
+        "timestamp": "30:30",
+        "text": "But it's now caused by the formation or the interaction with a certain axion, and this axion depending on the mass of this axion, it will change when this instability occurs."
+      },
+      {
+        "timestamp": "30:30",
+        "text": "And so in these different different regions, you see here on the left plot, different colors indicate axions of different masses."
+      },
+      {
+        "timestamp": "31:00",
+        "text": "And they will lead to instabilities for stars at different tracks basically. And specifically if you would look at the the the right plot, if the the blue the blue lines are the standard model, SM."
+      },
+      {
+        "timestamp": "31:30",
+        "text": "Um, if you would then introduce an axion with the same mass as the electron if that would exist and this this this mass range is not if I recall been excluded entirely uh by by other observations."
+      },
+      {
+        "timestamp": "31:30",
+        "text": "If you if that would exist, then that would lead to a shift in the in the core masses that actually explode all the way to the left."
+      },
+      {
+        "timestamp": "32:00",
+        "text": "With more or less the same number as that I need to to match the peak. And that's why I was like, okay, this is quite interesting and it also might actually lead to something that works for me."
+      },
+      {
+        "timestamp": "32:30",
+        "text": "Let's consider this a little bit more, or in that in that case, let's use this as a potential motivation of shifting things a little bit further uh out of the normal physics regime, right."
+      },
+      {
+        "timestamp": "32:30",
+        "text": "Anyway, um axions with higher masses, don't lead to a large shift in the location, because the instability would occur already due to electrons, right?"
+      },
+      {
+        "timestamp": "33:00",
+        "text": "But so only if it's like electron mass or slightly lower, will it actually change this this region of stars that uh explode to a lower lower mass."
+      },
+      {
+        "timestamp": "33:30",
+        "text": "Um, in a slightly less speculative fashion, we can also just take a stellar model and do it in a more detailed way."
+      },
+      {
+        "timestamp": "33:30",
+        "text": "Um, there is been no improvement in this in in the reaction rates of this carbon to oxygen or improvements depending on who you ask. It's a very debated uh reaction rate."
+      },
+      {
+        "timestamp": "34:00",
+        "text": "But if you put that into a detailed stellar evolution code like MESA, and you properly deal with the numerics, then that leads to a shift in the location of these black holes as well."
+      },
+      {
+        "timestamp": "34:30",
+        "text": "Um, in this case, it goes instead of leftward to to where I needed to go, it goes upwards to the right."
+      },
+      {
+        "timestamp": "34:30",
+        "text": "Uh and so these updated models, these better supposedly better uh better treated and and more up-to-date rates, leads to a shift in the wrong direction for me."
+      },
+      {
+        "timestamp": "35:00",
+        "text": "using free parameters in my model and just start shifting things and you know at some point I can make a fit."
+      },
+      {
+        "timestamp": "35:00",
+        "text": "So, that's I wasn't entirely happy with that but uh it is what it is. So the farmer models were the ones that I was using before and you see that they lead to a maximum mass of more or less 50 solar masses."
+      },
+      {
+        "timestamp": "35:30",
+        "text": "So I do need some secondly observable to start to constrain things right."
+      },
+      {
+        "timestamp": "35:59",
+        "text": "When you say fit the model you're not you've got a tail there you're you've Yeah yeah yeah right Yeah And so this tail is indeed important."
+      },
+      {
+        "timestamp": "36:30",
+        "text": "And so this tail and that's the mm this this set of uh where the peak basically sets a maximum limit that single stars can can attain right or binary stars and that matter but stars in a cluster can can merge continuously or hierarchically."
+      },
+      {
+        "timestamp": "37:00",
+        "text": "So once they have merge and they have a system with one mass here they can continue to merge to populate whatever is up here and so they uh they have used the location of this peak."
+      },
+      {
+        "timestamp": "37:30",
+        "text": "to sort of constrain the contribution of global cluster uh originating black holes. There are other mechanisms to populate this this region but they're all either pro- uh not of high enough rates or kind of secure or debated that they actually populate this region and the largest contender to actually populate this larger region here."
+      },
+      {
+        "timestamp": "38:00",
+        "text": "is cluster evolution or continuous merging within clusters and so indeed I cannot model this because I only treat stars as being from field binaries that are not in an environment where they can continuously merge up until higher masses. So yeah I'm missing a tail but maybe that's um that's sort of like expected within my approach already."
+      },
+      {
+        "timestamp": "38:30",
+        "text": "So now I do fit it and now but I I do need some extra observable because otherwise it's not really fair right um And that's that's why I want to use transient rates because we're talking about supernovae these things explode and they are quite luminous and that's something that we can observe there's many uh surveys that observe the rates of supernovae."
+      },
+      {
+        "timestamp": "39:00",
+        "text": "Maybe we can use this to constrain something about uh our our liberal uh changes to the model basically. So what I'm currently showing here is a a build up of of different rates um first earliest observations of binary black holes and what I'm showing here is the event rate density."
+      },
+      {
+        "timestamp": "39:30",
+        "text": "of these of these events. So this is the rate of these events occurring per giga-parsec cubed so within a certain volume of of space um and  all of these detectors can sort of uh calculate this sort of um they don't spend the same the volumes of course but they can calculate things in in in that volume."
+      },
+      {
+        "timestamp": "40:00",
+        "text": "So binary black hole merger rate which is the thing that I've been calculating now and we have the super luminous supernova rate which will be uh a key part in this next next one sorry and the core collapse supernova rate and what I'm going to add to this is my models basically."
+      },
+      {
+        "timestamp": "40:30",
+        "text": "um I'm showing this binary black hole merger rate which is these black dots which almost matches with the observations but we shouldn't forget that I removed this common envelope events. If I add those to them again they do actually match those. So uh there's some information to be gotten there."
+      },
+      {
+        "timestamp": "40:59",
+        "text": "And then on the blue line I show my core collapse supernova rate which is surprisingly well matching with the observed rate and that was uh sort of an a nice confirmation that um at least my models and what is observed is not entirely too different from each other. They overlap within like in a factor of two which is nice."
+      },
+      {
+        "timestamp": "41:30",
+        "text": "And then I have the transient event rate of my two supernova that I care about either this pulsation or pair instability supernova or the core collapse supernova uh sorry the pair instability supernova So the one that pulsates and the one that just explodes in one go."
+      },
+      {
+        "timestamp": "41:59",
+        "text": "And um we can start comparing that to the observations uh but I also introduce these two variations one to the left and one to the right to start to match things. And if I introduce the one that actually matches the peak you see that these rates for this two pair instability supernova go up by an order of magnitude Luckily the core collapse supernova don't really change that's expected and if I then move uh it to the right which matches the up to date rates and uh the the more improved models then things move a couple of factors downwards."
+      },
+      {
+        "timestamp": "42:00",
+        "text": "um more less 6 to 10 -6 times that of the core collapse supernova rate but is based on on this on this super luminous supernova and that basically means that every movement I make up only creates more tension with the super luminous supernova and so if I move if I change this mechanism of parent instability to match this peak in the gravitational wave distribution there is an increasing tension with the super luminous supernova rate that I'm creating and basically this cannot be the solution to to this peak which is even strengthened by the fact that if you go upwards you make better match with the the the detailed models and it releases the tension and so basically from this I need to I need to conclude that at least in my approach to calculating parent instability supernova it's excluded by the super luminous supernova rate and I cannot use it to invoke uh it has a solution to this peak"
+      },
+      {
+        "timestamp": "42:30",
+        "text": "And now there are others proposed solutions to this peak And this sort of the uh the implications that this peak is not from parent instability is also quite uh well this has to do with these clusters if this peak lies somewhere else in the contribution of clusters is quite different um But there are other ways to find something like a peak uh and uh Max Biel showed that if there is a nice good combination between stable mass transfer even though super Eddington uh mass transfer and chemically homogeneous stars the combination of these three uh and that together with winds leads to a peak in the location that actually is observed to have this peak uh um and so only a very small part is uh is contributed by this parent instability supernova because um the models that he uses still has this range embedded in it So there seems to be some other pathway to getting this peak"
+      },
+      {
+        "timestamp": "42:30",
+        "text": "And if we can zoom in a bit and we add some extra observations we we may be able to now constrain this um So again at least this uh at redshift zero the core collapse supernova rate matches quite well but what about the pulsation or pair instability supernova rate um So I added to this to this figure the super luminous supernova rate I'm not sure how um how familiar you all are with super luminous supernova but first of all it's not really clear what they are except for that they are very luminous um What we do know is that they they they seem to have a a different set of origins."
+      },
+      {
+        "timestamp": "42:59",
+        "text": "Not all of them can be captured by the same type of supernova because they they have clear different morphologies in their transient light curves. Some are very sharply peaked and fall off quite quickly and are very luminous and some but only handful are very broad and very long and are very luminous And that basically means um right okay so at this point here we see that super luminous supernova rate especially with the pair pulsation or pair instability but also with this normal pair instability start to exceed the observed super luminous supernova rates."
+      },
+      {
+        "timestamp": "43:00",
+        "text": "um there are other dynamical models that could lead to an over density within this region uh the only thing with this paper is like they still have this parent instability which leads to this 40 solar mass uh even if you remove it you still see this you don't see this peak anymore so parent instability is some part of this of this story but they do see somewhat of a peak without uh such contributed by dynamical effects as well there And then another paper which came out relatively recently in December um which shows that there are some secondary effects of this parent instability supernova that have my maybe been overlooked so the model that I used was slightly a toy model I took a fit and I introduced some sliding parameters in this And"
+      },
+      {
+        "timestamp": "43:30",
+        "text": "the way that they have approached it in this way they've they've basically made this sliding calculation within the details uh code and they found that there might be some secondary effects in here The only thing that I have with this paper is that what they find is that if you slide things to the left So this is the their fiducial model where you see the black hole mass and the the rate of these black holes merging If you slide things to the left that would still increase the tension that I'm finding with this supernova rates So even if they find a secondary peak which is slightly lower which they say that okay that could match that could be the match at 35 solar masses There"
+      },
+      {
+        "timestamp": "43:30",
+        "text": "But we also know that maybe only 10% of these super luminous supernova could originates from this supernova type and now more less 10% um someone else luckily calculated that for me because that's quite a difficult calculation but what they basically so Nicholl have all calculated that the rate of pulsation of pair instability supernova cannot exceed PPISNe."
+      },
+      {
+        "timestamp": "44:00",
+        "text": "basically moving leftward will still make a higher tension with this super luminous supernova rate um To a second like a tertiary path that we could maybe use is to calculate the yields of these pulsational parent instability supernova and put this into a galaxy evolution code and this is something that I'm working on with with uh Rob here um We do need uh some better yields sets for these supernova But we've been working on uh an interfacing between his code L-galaxies and our code called binary CE um So that we can interface these these yields of these supernova quite easily and we can propagate that through with his calculations um We're not entirely there yet because we need to now run some detailed models But um quite quickly we could also use maybe the path of galactic chemical evolution to exclude this in a in a third way basically"
+      },
+      {
+        "timestamp": "44:30",
+        "text": "This is one of the things that we that I find in a very rough back of the envelope calculation is that um at this point of shifting things to the left to match the peak more than more than uh 1% of all the mod material that's being generated it comes from this sup these parent instability supernova and that might well be tension with some of the yields that we uh will be observed But it's it's still a little bit too early to say whether that's actually creating attention or not and we probably need a a better code than a back of the envelope calculation like I'm doing there to actually estimate this um But yeah there's different pathways on which we can exclude uh the fact that pulsational parent instability is the cause of this and and just to wrap it up I've implemented this new parent instability mechanism Clearly however my fiducial fair version of this does not lead to a good match I need to introduce some changes uh and I can make a match but that match is in tension with uh observed transient rates And um yeah that basically makes me conclude that this bump is not caused by parent instability and that will have implications down the line on things like how the big the fraction of contributions of globular clusters to to all of the the merger rates and that means something about the formation of globular clusters or this yeah Right okay That's what I wanted to uh to show today"
+      },
+      {
+        "timestamp": "45:00",
+        "text": "Thank you Dave for that very interesting talk um So we've got a few minutes for questions"
+      },
+      {
+        "timestamp": "45:30",
+        "text": "Yeah I always sort of uh thinking about this this morning about the non-matching of the rates you kind of got this rate distribution you have in there because of the pp pp"
+      },
+      {
+        "timestamp": "49:00",
+        "text": "Recapping. Um, and um Yeah the great the great thing about that I want to make a little bit more about the the origin of that that great curve because it doesn't look like too many other observational distributions I've seen. And I mean And you know that I mean in the sense that it's very smooth. It doesn't it doesn't actually misbehave or Well yeah no right Yeah Yeah so underlying in this is just a handful of observations right Yeah Uh so And there is a reason there is a reason why this is such a smooth curve Yeah It's basically because they they fitted a power law plus peak model to to this curve to this set of observations And within the uncertainties of the observations that leads to the the sort of like the the regions spanned by this by this curve. There are other fits that people have made and even non-parametric fits uh but they all do find a feature in that same region. So this is not necessarily just a remnant of the fact that people impose a power law plus a Gaussian peak because then you will find something like a Gaussian peaks somewhere right But this is actually of all the also all the other models the simplest model that actually captures the feature that all of the models see. And otherwise it becomes an over- an over-fit model that you see. So many, so many things. Uh those are kind of thinking of you know if you had had people working on simulations in the past to do the same things like you know the the observations or the simulations that you were talking about And when you're talking about some of the some of the steps Yeah yeah yeah But so between like I go all the way back to the first like between the first data set that was uh released Basically all the 2 1 0 1 this curve This location of this peak was also found right So now with the increasing number of of of the increasing numbers uh things can get constrained but it it remains a feature in this location And even if there is a relatively simple fit made to it even with more complicated fits or non-parametric fits a feature is seen in that region right And it's relatively easy to uh to show that as the distribution with the side mark that this is actually behind there."
+      },
+      {
+        "timestamp": "49:30",
+        "text": "The questions Uh could you also check the underlying distributions just to make sure that we see it in this No questions here, that's exactly right So uh I've got a question in this uh stellar evolution model where you have these big mass loss events like you've described in this several of them But it seems that this specifics of this event must be very deterministic uh in order to give us a sharp cut-off on the mass. Is is that the case and to what extent in the models do you have to take into account the details of uh these like of this stellar evolution of these events or is it less sensitive to that So uh"
+      },
+      {
+        "timestamp": "49:59",
+        "text": "Stellar evolution Single star evolution is complex but somewhat understood Some properties affect the evolution more so than others Initial mass more massive Hotter and more luminous faster evolution supernovae Initial composition more metal rich Higher opacity more wind mass loss"
+      },
+      {
+        "timestamp": "50:30",
+        "text": "Population synthesis We study populations of binaries Population synthesis binary_c and binary_c-python Large number of systems per population 10^12 12 populations with different metallicity With a set of input assumptions we can calculate what black hole binaries and what their properties are"
+      },
+      {
+        "timestamp": "50:59",
+        "text": "PPISNe mechanism um right in in this figure we see um right so we see a a whole bunch of different curves and these curves originate from stars with different metallicities And so there is some some change in the in the opacity that basically is the result of these different metallicities that leads to a different structure and a different explosion mechanism or behavior But otherwise if you treat the star the same and in uh the stellar evolution leads up to a core mass of that mass then you should expect more or less the same uh same outcome However we are treating these things still in in 1D stellar evolution codes. And in some supernova mechanisms it's also quite clear that the initial turbulence or convection has quite a big effect on the outcome of of these explosions right um So I think these results are fairly robust but a good set of three unit 3D models with the same global structures but different microstructures might be interesting to to lead to Yeah uh Yeah But I do think globally this is quite a robust result And find simulations like information on the star masters so when they have also found some white regions"
+      },
+      {
+        "timestamp": "51:30",
+        "text": "Um like so is like intermediate mass black holes being formed in that region Yeah so have you found have you do you know about any research that is about being like"
+      },
+      {
+        "timestamp": "51:59",
+        "text": "Um I know of couple of papers that that seem to have a result in that direction But I don't know entirely for sure I could look up the papers but these are if you get these very massive stars then either you will get this effect um where this this explosive ignition is really not not enough to explode anything and this star will just collapse onto itself. And then might actually well happen in these in these clusters because I'm not sure if it's even necessary to have these super super massive stars within the center of the cluster because this would only happen for something like 400 500 solar mass stars. Um And in your case if you get very massive stars you get something like a general relativistic instability that happen and just everything collapses onto a a black hole as well The problem is they're not in binaries and so it might be a bit difficult to to measure that or they're probably not as often in binaries as we need them to be to detect them in this way. Um Interesting question and I have some papers that I could lead you to if you want Ok any more questions from um room Just look at the I mean I want to just have to play to be Are there any surveys that you're looking in to find to um be"
+      },
+      {
+        "timestamp": "52:30",
+        "text": "Um PPISNe Um PPISNe"
+      },
+      {
+        "timestamp": "56:00",
+        "text": "Right so the o4 uh"
+      },
+      {
+        "timestamp": "56:30",
+        "text": "the o4 runs is currently ongoing um"
+      },
+      {
+        "timestamp": "56:59",
+        "text": "so that they will definitely release a whole"
+      },
+      {
+        "timestamp": "57:00",
+        "text": "a whole bunch of extra material that we can start"
+      },
+      {
+        "timestamp": "57:01",
+        "text": "to use and then this curve will"
+      },
+      {
+        "timestamp": "57:02",
+        "text": "really hopefully start to show some more features that we can use as anchor points right because what I"
+      },
+      {
+        "timestamp": "57:03",
+        "text": "I do predict that if in my better model the one that's least intention"
+      },
+      {
+        "timestamp": "57:04",
+        "text": "with the with the uh transient there's an another peak here"
+      },
+      {
+        "timestamp": "57:05",
+        "text": "It's all basically waiting on"
+      },
+      {
+        "timestamp": "57:06",
+        "text": "on those results and otherwise there's transient transient factories like the BTF and ZTF that we can use for this"
+      },
+      {
+        "timestamp": "57:07",
+        "text": "um but I really think for me"
+      },
+      {
+        "timestamp": "57:08",
+        "text": "the new uh gravitational wave run is is going to be uh"
+      },
+      {
+        "timestamp": "57:09",
+        "text": "the the one that can exclude or"
+      },
+      {
+        "timestamp": "57:10",
+        "text": "bring even more tension to to to the situation right"
+      },
+      {
+        "timestamp": "57:11",
+        "text": "but but currently the uh this this transient tension is already there and it won't relieve it"
+      },
+      {
+        "timestamp": "57:12",
+        "text": "So what I'm predicting is that there is another feature in this region here and that would be basically a sort of confirmation to"
+      },
+      {
+        "timestamp": "57:13",
+        "text": "to what I'm predicting"
+      },
+      {
+        "timestamp": "57:14",
+        "text": "ppppp"
+      },
+      {
+        "timestamp": "57:15",
+        "text": "ppp"
+      },
+      {
+        "timestamp": "57:16",
+        "text": "ppp"
+      }
+    ]
+  },
+  {
+    "video_id": "2BXLR-UYUns",
+    "transcript": [
+      {
+        "timestamp": "00:00",
+        "text": "Okay. Alright. Well, let's uh get see it. We're gonna continue with the first uh session of contributed talks. We have four exciting talks this morning and uh Rafael Martines here at Astro AI and uh we're gonna talk mostly about stellar astrophysics in this session. Uh the first speaker is Nolan Koblischek, from also from Toronto. He's going to tell us about modeling spectra and tuning to stellar foundation models. Floor is yours."
+      },
+      {
+        "timestamp": "00:30",
+        "text": "Thank you. Hi everyone. So yeah, I'm a first-year PhD student at the University of Toronto. And today I'm going to be tuning you guys into Spectra FM. Uh Okay. Uh so yeah, so the dataset that we're using to just as a prototype, prototype our foundation model, is the APOGEE spectroscopic survey. It's looked at hundreds of thousands of stars and got high-resolution spectra for each of them as well as, you know, some simple spectral properties or stellar properties like temperature and also chemical abundances. And this has been used for many, many years to train machine learning algorithms because of the size of the dataset. Here's just a few examples. Uh, you know, a neural network trained on hundreds of thousands of APOGEE spectra to predict distances. Scientifically useful, great. Another neural network trained on tens of thousands of APOGEE spectra to predict ages from astrochronology. Great, also scientifically useful. Um, but what if you don't have tens or hundreds of thousands stars to train a model for your task? What you want to use uh a neural network to do so."
+      },
+      {
+        "timestamp": "01:30",
+        "text": "So, uh what if you only have 100 stars? This is very common. You launch a new instrument, you collect, you know, all your spectra, but you want to train a neural network and you only have 100 labels. You only have 100 iron abundances measured in this scenario. This is probably not going to cover the full distribution that you want your neural network to be good at. In this case, if they're all metal-rich stars, then training a neural network is going to lead to a model that's useless in the metal-poor range. Um, but there's some clever tricks to get around this. You need to find more data. Uh so you can leverage like synthetic spectra, spectra from different instruments, even uh different but similar tasks. Uh, you can train up a model that has a good general knowledge and then you can fine-tune it for this task and it hopefully will have a better start. And so, what I'm talking about is making a foundation model for stars that will be generally useful for problems like this. Uh, and there's you know, uh this has been shown before to work well for uh astrophysics. Um, the concept of a foundation model is don't start uh your neural network from scratch when you have a new task. Train a neural network on your new task that has already been trained on a similar task. Uh, and so, Mike Wansley showed that when or at all that when he had 100 JWST images of galaxies and he wanted to train a neural network to predict whether there is a spiral or not, um that when they started with a neural network that had already seen hundreds of thousands of Galaxy Zoo images it"
+      },
+      {
+        "timestamp": "02:30",
+        "text": "led to a model that was much higher accuracy than a neural network trained from scratch on the 100 JWST images. That's not too surprising, but it shows that pre-training uh is, you know, a very effective method and to drive that point home he showed that even when you start with a neural network that was trained on real images of cats, dogs, and pianos, um and then fine-tuned that network on your JWST images, it was still better than starting with a neural network from random weights. And so, it seems like even if, you know, they're not that similar uh then uh it's still better to use a pre-trained model. Uh, so, how do we go about doing this for stars? So we wanted a model that can take in all the observations we have of a star and is capable of doing many different tasks. And so we found that transformer neural networks can vary their input size and so they were the optimal algorithm for our task compared to normal neural networks that have a fixed input size. And so, essentially uh this allows us to create a model that can take in spectra of size 100 or a thousand, uh it allows us to take in spectra from any instrument, any wavelength range, any resolution, um, and we do this by embedding the pixels individually. We embed their fluxes into an embedding space and their wavelengths. We also embed into the same embedding space according to a positional encoding, which we borrowed from language models. It's essentially how language models know the position of a word in a sentence. We use that but for wavelength and so it's continuous. So, you can give it any wavelength, which is very important. And by embedding the wavelength and the flux of a pixel and adding it in the embedding space and feeding that into the transformer, we suddenly have a transformer that can take in 100 Gaia spectra pixels or thousands of APOGEE spectrum pixels or both at the same time. And so, you really can give it any observations you have of a star and then request information about that star because it's also very flexible on the output as well. And so, you can train it to predict anything you have the training data for. And so, it makes a prediction and an uncertainty. Um, Okay. So, uh just to prototype our foundation model, um we train it on hundreds of thousands of APOGEE spectra to predict uh like stellar properties and just basic abundances like oxygen, magnesium and iron abundance. And just for testing purposes uh we train it on the full wavelength range of APOGEE for each star, but the first half we give it real APOGEE data and the second half we give it only synthetic data. So, synthetic spectra. Um, and this leaves uh the second half available for testing which you'll see later. But essentially, we train it"
+      },
+      {
+        "timestamp": "03:30",
+        "text": "on"
+      },
+      {
+        "timestamp": "03:45",
+        "text": "on"
+      },
+      {
+        "timestamp": "04:00",
+        "text": "on"
+      },
+      {
+        "timestamp": "04:15",
+        "text": "on"
+      },
+      {
+        "timestamp": "04:30",
+        "text": "on"
+      },
+      {
+        "timestamp": "04:45",
+        "text": "on"
+      },
+      {
+        "timestamp": "05:00",
+        "text": "on"
+      },
+      {
+        "timestamp": "05:15",
+        "text": "on"
+      },
+      {
+        "timestamp": "05:30",
+        "text": "on"
+      },
+      {
+        "timestamp": "05:45",
+        "text": "on"
+      },
+      {
+        "timestamp": "06:00",
+        "text": "on"
+      },
+      {
+        "timestamp": "06:15",
+        "text": "on"
+      },
+      {
+        "timestamp": "06:30",
+        "text": "on"
+      },
+      {
+        "timestamp": "06:45",
+        "text": "on"
+      },
+      {
+        "timestamp": "07:00",
+        "text": "Pre-training for Spectra. Predict T eff, log(g), [O/Fe], [Mg/Fe], and [Fe/H]."
+      },
+      {
+        "timestamp": "07:30",
+        "text": "First half: APOGEE spectra. Second half: Synthetic spectra. Test range for fine-tuning with real spectra."
+      },
+      {
+        "timestamp": "08:00",
+        "text": "Fine-tuning on [Fe/H]. Real APOGEE spectra, only 100 metal-rich stars."
+      },
+      {
+        "timestamp": "08:30",
+        "text": "Neural Network trained from scratch, RMSE = 0.158. SpectraFM pre-trained synthetic, No Fine-tuning, RMSE = 0.136. SpectraFM pre-trained & fine-tuned, RMSE = 0.118."
+      },
+      {
+        "timestamp": "09:00",
+        "text": "Same model, new tasks (not in pre-training). Si, Ti, and Ni abundances. 100 stars."
+      },
+      {
+        "timestamp": "09:30",
+        "text": "Knowledge from Fe, O, and Mg pre-training.  Neural Network Trained from Scratch, [Si/Fe]=0.057 dex, [Ti/Fe]=0.084 dex, [Ti II/Fe]=0.109 dex, [Ni/Fe]=0.045 dex.  SpectraFM pre-trained & fine-tuned, [Si/Fe]=0.041 dex, [Ti/Fe]=0.080 dex, [Ti II/Fe]=0.119 dex, [Ni/Fe]=0.036 dex."
+      },
+      {
+        "timestamp": "10:00",
+        "text": "SpectraFM: A Foundation Model for Astronomers. Pre-train on many datasets and open-source."
+      },
+      {
+        "timestamp": "10:30",
+        "text": "Spectra prediction. LAMOST, GALAH, etc. Gaia. XP Spectra. Astrometry. Photometry. 2MASS & SDSS Photometry."
+      },
+      {
+        "timestamp": "11:00",
+        "text": "Age, Mass, Radii. Reddening (E(B-V)). Radial velocities. Variable stars. Periods/Amplitude. Fine-tune for your task! A single neural network with all neurons participating."
+      },
+      {
+        "timestamp": "11:30",
+        "text": "Example Use Cases.  Spectra to Stellar Parameters, Stellar Parameters to Spectra, Spectra to Observations, Stellar Parameters to Observations, Recovery of Empirical Law."
+      },
+      {
+        "timestamp": "12:00",
+        "text": "Infer stellar parameters from spectra in a survey. Generate spectra from stellar parameters. Fill in missing portions of a spectrum. Check the 'concept' learnt by the model. Extract data-driven extinction."
+      },
+      {
+        "timestamp": "12:30",
+        "text": "Yes. So, we actually, so, ASKAP, uh, goes along with APOGEE. They basically made synthetic spectra grids."
+      },
+      {
+        "timestamp": "13:00",
+        "text": "Uh, that with synthetic spectra that matches the real spectra for the stars and so we just borrowed the best fit synthetic spectra for those stars."
+      },
+      {
+        "timestamp": "13:30",
+        "text": "Yeah. And so if you want to include the data from different observations in your foundation model, then how do you consider those different observations?"
+      },
+      {
+        "timestamp": "14:00",
+        "text": "and hopefully it learns how to do this with different"
+      },
+      {
+        "timestamp": "14:00",
+        "text": "Yeah, I think it's it's going to be an experiment, really, to see what happens when we have observations from different telescopes that have different systematics, you know."
+      },
+      {
+        "timestamp": "14:30",
+        "text": "instruments if not then yeah we're going to try and figure out"
+      },
+      {
+        "timestamp": "14:30",
+        "text": "what it needs to know in order to work with different instruments or different systematics Yeah thanks"
+      },
+      {
+        "timestamp": "15:00",
+        "text": "Thank you we have time maybe before one So it's really really great work Yeah thanks I was wondering if you played around with different parameters accounts for the model and if you've found similar scaling rules that we've seen in the textural models then"
+      },
+      {
+        "timestamp": "15:30",
+        "text": "Yeah that is definitely only a to do this thing is we really want to see this beautiful scaling law that I think you saw um and that if you like increase the number of parameters uh or the amount of data then you see a nice scaling law with the train or with the test loss or accuracy uh and no I have not done it uh so far Um I've just been limited by compute and how long uh how long I want to you know wait for the training uh right now it's fairly small It's like 5 million I think parameters um small um but we can definitely scale it up because uh yeah we have some a100 time uh so we just the pre-training took like um maybe a day uh 2 days about and then fine-tuning takes like an hour So yeah thanks"
+      },
+      {
+        "timestamp": "16:00",
+        "text": "Okay Okay Um one more question from online Could it be possible to feed spectra from other models"
+      },
+      {
+        "timestamp": "16:09",
+        "text": "What do you mean by other models Like other synthetic spectra uh generation Yeah I mean this is the wonderful part is that it's so flexible that you can just define a new input uh and give it that input and so uh yeah we haven't really decided what synthetic spectra we're going to give it in the long run uh but yeah it's totally possible to give it synthetic spectra from different pipelines and that's going to require some experiment to see how it handles that or is if that's even useful So yeah Thanks right yeah"
+      }
+    ]
+  }
+]
