@@ -34,7 +34,7 @@ def generate_transcript(video_path, youtube_id):
     1. Generate a transcript of the entire lecture.
     2. Ensure that the transcript captures all spoken content, including technical terms and explanations.
     3. Include timestamps of each sentence.
-    4. Timestamps should be exactly every 30 seconds.
+    4. Timestamps should be about every 30 seconds and so should contain many sentences each.
     5. Output in JSON format with the structure of the following example:
     {{
         "transcript": [

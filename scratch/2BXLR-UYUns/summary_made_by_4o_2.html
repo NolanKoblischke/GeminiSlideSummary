@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SpectraFM: Tuning into Stellar Foundation Models</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+        }
+        .content {
+            max-width: 800px;
+            margin: auto;
+        }
+        .slide {
+            margin-bottom: 40px;
+        }
+        .slide img {
+            display: block;
+            margin: 0 auto 20px auto;
+            max-width: 100%;
+        }
+        .slide p {
+            text-align: center;
+            font-style: italic;
+        }
+        h1, h2 {
+            color: #2c3e50;
+            text-align: left;
+        }
+        .content p {
+            text-align: left;
+            margin: 0 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+
+    <h1>SpectraFM: Tuning into Stellar Foundation Models</h1>
+    <p><strong>Nolan Koblischke, Jo Bovy</strong></p>
+    <p><em>AstroAI Workshop 2024</em></p>
+    <div class="slide">
+        <h2>Introduction</h2>
+        <p>
+            In recent years, the field of stellar astrophysics has benefited immensely from the application of machine learning techniques, particularly neural networks, to vast datasets of stellar spectra. These methods have enabled astronomers to derive critical stellar properties such as effective temperature, surface gravity, and chemical abundances with unprecedented precision and efficiency. However, a significant challenge remains when dealing with new datasets that lack the extensive training samples required for traditional machine learning approaches. To overcome this, we propose SpectraFM, a foundation model pre-trained on a large and diverse set of stellar spectra, designed to be fine-tuned for specific tasks with limited data.
+        </p>
+        <img src="slide_00_01.png" alt="Slide 1">
+        <p>Figure 1: Introduction to SpectraFM.</p>
+    </div>
+
+    <div class="slide">
+        <h2>Stellar Spectra</h2>
+        <p>
+            The APOGEE (Apache Point Observatory Galactic Evolution Experiment) survey provides a comprehensive dataset of high-resolution near-infrared (near-IR) spectra for over 657,000 stars. This dataset includes detailed measurements of stellar properties, such as effective temperature (T_eff), surface gravity (log g), and metallicity ([Fe/H]), derived from synthetic spectra grids using the APOGEE Stellar Parameters and Chemical Abundances Pipeline (ASPCAP). The high resolution of APOGEE spectra (R ~ 22,500) and the wide wavelength coverage (1.51 - 1.70 microns) make it a valuable resource for training machine learning models.
+        </p>
+        <p>
+            Figure 2 displays a normalized spectrum from APOGEE, highlighting the spectral lines and features used to derive the stellar parameters for a star designated 2M04154082-7221410. The precision and breadth of APOGEE data have facilitated numerous machine learning applications, from predicting stellar distances to estimating stellar ages. This dataset serves as the foundation for pre-training our SpectraFM model.
+        </p>
+        <img src="slide_01_28.png" alt="Slide 2">
+        <p>Figure 2: Overview of APOGEE and stellar spectra.</p>
+    </div>
+
+    <div class="slide">
+        <h2>Measurement of Galactic Distance</h2>
+        <p>
+            Accurate measurement of the distance to the Galactic center (R_0) is a fundamental parameter for understanding the structure and dynamics of the Milky Way. Traditional methods for determining R_0 involve kinematic measurements and modeling of the orbital parameters of stars within the Galactic bar. The study presented in Figure 3 utilizes the kinematics of bar stars, combined with spectrophotometric distances derived from a neural network approach, to achieve a precise measurement of R_0.
+        </p>
+        <p>
+            This approach leverages data from APOGEE and Gaia DR3, incorporating radial velocities and proper motions to refine the distance estimates. The use of a neural network to predict spectrophotometric distances from astrometry and photometry allows for improved precision and reduces systematic uncertainties inherent in traditional methods. The results demonstrate the capability of machine learning models to enhance our understanding of Galactic dynamics and provide more accurate distance measurements.
+        </p>
+        <img src="slide_01_40.png" alt="Slide 3">
+        <p>Figure 3: Using kinematics of bar stars for distance measurement.</p>
+    </div>
+
+    <div class="slide">
+        <h2>Dynamical Heating across the Milky Way</h2>
+        <p>
+            The study of dynamical heating in the Milky Way's disc is crucial for understanding the Galactic formation and evolution processes. As shown in Figure 4, this research focuses on the kinematics of stars with varying metallicities ([Fe/H]) to investigate age-velocity dispersion relations. By employing a Bayesian neural network model, the study estimates stellar ages and reveals distinct kinematic behaviors for different [Fe/H] populations.
+        </p>
+        <p>
+            The analysis includes data from APOGEE DR14 and Gaia DR2, covering a wide range of Galactocentric radii. The Bayesian neural network's ability to handle uncertainties in input data and provide robust age estimates is particularly advantageous for this type of study. The findings suggest that stars in the high [Fe/H] population exhibit a steeper age-velocity dispersion relation, indicative of more significant dynamical heating over time, compared to the low [Fe/H] population. This research highlights the effectiveness of combining large spectroscopic surveys with advanced machine learning techniques to probe the dynamical history of the Milky Way.
+        </p>
+        <img src="slide_02_00.png" alt="Slide 4">
+        <p>Figure 4: Study on dynamical heating using APOGEE and Gaia.</p>
+    </div>
+
+    <div class="slide">
+        <h2>Motivating Problem</h2>
+        <p>
+            One of the primary challenges in applying neural networks to stellar spectroscopy is the limited availability of labeled data for certain tasks. This issue is particularly acute when dealing with new instruments or observing programs that have not yet accumulated extensive datasets. For instance, Figure 5 illustrates the problem of predicting metallicity ([Fe/H]) when only 100 metal-rich stars are available for training. A model trained solely on this limited data performs poorly on metal-poor stars, as it lacks sufficient information to generalize across the full metallicity range.
+        </p>
+        <p>
+            To address this limitation, we propose leveraging synthetic spectra and data from different instruments to pre-train a model that captures a broad range of stellar properties. By pre-training on large, diverse datasets, the model develops a general understanding of stellar spectra, which can then be fine-tuned for specific tasks with limited data. This approach aims to overcome the data scarcity issue and improve model performance in underrepresented regions of parameter space.
+        </p>
+        <img src="slide_03_06.png" alt="Slide 5">
+        <p>Figure 5: Addressing the problem of limited metal-rich star data.</p>
+    </div>
+
+    <div class="slide">
+        <h2>Pre-training & Foundation Models</h2>
+        <p>
+            The concept of foundation models, which are pre-trained on extensive datasets and subsequently fine-tuned for specific tasks, has gained traction in various domains, including astrophysics. Pre-training a neural network on a related but broader dataset provides a strong initial understanding that can be refined for particular applications. As shown in Figure 6, pre-training on large-scale datasets such as Galaxy Zoo images or synthetic spectra significantly enhances model performance on tasks involving new datasets.
+        </p>
+        <p>
+            The effectiveness of this approach is demonstrated by the improved accuracy in identifying galaxy morphologies from JWST images when starting with a model pre-trained on Galaxy Zoo data. Similarly, pre-training on real images of cats, dogs, and pianos followed by fine-tuning on JWST images still yields better results than training from scratch. This underscores the value of pre-training on large, diverse datasets to build robust and adaptable models for specific astrophysical tasks.
+        </p>
+        <img src="slide_04_30.png" alt="Slide 6">
+        <p>Figure 6: Importance of pre-training on similar tasks.</p>
+    </div>
+
+    <div class="slide">
+        <h2>Pre-training for Spectra</h2>
+        <p>
+            Transformers, known for their flexibility in input size and capacity to handle varied data types, are particularly well-suited for pre-training on stellar spectra. Our approach, illustrated in Figure 7, involves embedding pixel wavelengths and fluxes into a continuous embedding space. This technique, adapted from language models, allows the transformer to process spectra of different resolutions and wavelength ranges seamlessly.
+        </p>
+        <p>
+            We use positional encoding to represent the wavelengths, ensuring that the model can handle any wavelength input. By embedding both the flux and wavelength of each pixel, we enable the transformer to ingest spectra from different instruments, resolutions, and wavelength ranges. This flexibility allows the model to incorporate diverse observational data, enhancing its ability to generalize across various types of stellar spectra.
+        </p>
+        <p>
+            During pre-training, we provide the model with a mixture of real and synthetic spectra. This strategy ensures that the model learns to interpret realistic spectral features while also gaining robustness from the synthetic data. The pre-trained transformer can then be fine-tuned for specific tasks, leveraging its broad understanding of stellar spectra to achieve superior performance even with limited task-specific data.
+        </p>
+        <img src="slide_06_21.png" alt="Slide 7">
+        <p>Figure 7: Transformer architecture for spectra pre-training.</p>
+    </div>
+
+    <div class="slide">
+        <h2>Fine-tuning on [Fe/H]</h2>
+        <p>
+            Fine-tuning a pre-trained model involves adapting it to specific tasks using a smaller, task-specific dataset. As shown in Figure 8, we fine-tuned our pre-trained transformer model on real APOGEE spectra to predict metallicity ([Fe/H]). Despite having only 100 metal-rich stars for fine-tuning, the model generalizes well to metal-poor stars.
+        </p>
+        <p>
+            The pre-trained model's ability to generalize stems from its extensive pre-training on synthetic and real spectra, which equips it with a broad understanding of stellar spectral features. During fine-tuning, we freeze parts of the model to prevent overfitting and ensure that only the necessary adjustments are made. This approach allows the model to retain its general knowledge while adapting to the specifics of the fine-tuning task.
+        </p>
+        <p>
+            The results demonstrate a significant improvement in [Fe/H] prediction accuracy compared to a model trained from scratch. This highlights the efficacy of the pre-training and fine-tuning strategy in leveraging limited data to achieve high performance on specific tasks.
+        </p>
+        <img src="slide_07_08.png" alt="Slide 8">
+        <p>Figure 8: Fine-tuning on [Fe/H] using real APOGEE spectra.</p>
+    </div>
+    
+    <div class="slide">
+        <h2>SpectraFM: A Foundation Model for Astronomers</h2>
+        <p>
+            SpectraFM is designed to be a versatile foundation model pre-trained on a wide array of datasets, including spectra from surveys such as LAMOST, GALAH, and Gaia. This extensive pre-training allows the model to handle various observational data types and predict multiple stellar parameters. As depicted in Figure 9, SpectraFM can be applied to a range of tasks, from inferring stellar parameters and generating synthetic spectra to filling in missing spectral regions and predicting chemical abundances.
+        </p>
+        <p>
+            The foundation model's flexibility stems from its transformer architecture, which can process inputs of varying sizes and resolutions. By embedding pixel wavelengths and fluxes into a continuous space, the model can seamlessly integrate data from different instruments and surveys. This capability makes SpectraFM an invaluable tool for astronomers, enabling them to fine-tune the model for their specific tasks with minimal additional data.
+        </p>
+        <p>
+            Future work will focus on expanding the pre-training dataset to include more diverse observations and refining the model's architecture to enhance its generalizability. By building a robust foundation model that can be adapted for a wide range of astronomical applications, SpectraFM aims to significantly advance the field of stellar astrophysics.
+        </p>
+        <img src="slide_09_00.png" alt="Slide 9">
+        <p>Figure 9: Overview of SpectraFM and its applications.</p>
+    </div>
+    
+    <div class="slide">
+        <h2>Conclusion</h2>
+        <p>
+            In summary, SpectraFM represents a significant advancement in applying foundation models to stellar astrophysics. By pre-training on extensive datasets and fine-tuning for specific tasks, this approach addresses the limitations of data scarcity and enhances model performance across a wide range of applications. Future work will focus on expanding the pre-training dataset and exploring new tasks to further improve the model's generalizability and utility for the astronomical community.
+        </p>
+        <p>
+            The results demonstrate the effectiveness of pre-training on large, diverse datasets and the benefits of fine-tuning with limited task-specific data. SpectraFM's transformer architecture and flexible input handling make it a powerful tool for stellar astrophysics, enabling researchers to derive accurate stellar parameters and gain new insights into stellar and Galactic evolution.
+        </p>
+        <img src="slide_09_57.png" alt="Slide 10">
+        <p>Figure 10: Concluding remarks on SpectraFM.</p>
+    </div>
+    </div>
+</body>
+</html>
