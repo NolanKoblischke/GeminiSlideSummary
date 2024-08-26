@@ -17,6 +17,8 @@ Provide a youtube video of a lecture and it will extract timestamps of unique sl
 ## Current Issues
 
 - Transcript generation sometimes fails. Could try feeding Gemini only audio instead of video. Could also try supplementing with youtube transcripts that Gemini should improve. Must be done in segments since often transcripts are more than 8192 tokens.
+- Fix issue where timestamp splitting affected by youtube id having underscore
+- Final paper does not always have every slide, especially if there are >50 slides.
 
 ## Requirements
 

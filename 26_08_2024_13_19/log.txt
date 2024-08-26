@@ -1,0 +1,98 @@
+13:19:25
+Processing video: https://www.youtube.com/watch?v=Lu_ScrK6kNQ
+
+13:25:11
+Saved video for video: Lu_ScrK6kNQ
+13:25:11
+Error processing video: https://www.youtube.com/watch?v=Lu_ScrK6kNQ
+
+ValueError: invalid literal for int() with base 10: 'ScrK6kNQ/segments/segment'
+Traceback:
+Traceback (most recent call last):
+  File "/Users/nolan/Desktop/AstroTalks/GeminiSlideSummary/run.py", line 44, in <module>
+    transcript = generate_transcript(segment_path, youtube_id)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nolan/Desktop/AstroTalks/GeminiSlideSummary/generate_transcript.py", line 25, in generate_transcript
+    start_time = seconds_to_mmss(int(start_time_s))
+                                 ^^^^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'ScrK6kNQ/segments/segment'
+
+13:25:11
+----------------------------------------
+
+
+13:25:11
+Processing video: https://www.youtube.com/watch?v=kb3d-q3OOZY
+
+13:28:45
+Saved video for video: kb3d-q3OOZY
+13:29:34
+Saved transcript for segment: segment_840_1260.mp4
+13:30:11
+Saved transcript for segment: segment_0_420.mp4
+13:30:51
+Saved transcript for segment: segment_2100_2520.mp4
+13:31:28
+Saved transcript for segment: segment_1680_2100.mp4
+13:32:23
+Saved transcript for segment: segment_420_840.mp4
+13:33:12
+Saved transcript for segment: segment_1260_1680.mp4
+13:33:26
+Saved transcript for segment: segment_2520_2535.mp4
+13:33:26
+Saved transcript for video: kb3d-q3OOZY
+13:45:41
+Saved timestamps and timestamp agent trace for video: kb3d-q3OOZY
+13:45:41
+Deleted video files for video: kb3d-q3OOZY
+13:45:41
+Saving screenshots
+13:45:50
+Generating paper
+13:46:45
+Total Flash calls: 13
+13:46:45
+Total Pro calls: 7
+13:46:45
+----------------------------------------
+
+
+13:46:45
+Processing video: https://www.youtube.com/watch?v=n88FoEmI0KE
+13:50:34
+Saved video for video: n88FoEmI0KE
+13:51:21
+Saved transcript for segment: segment_840_1260.mp4
+13:51:42
+Saved transcript for segment: segment_2520_2620.mp4
+13:52:29
+Saved transcript for segment: segment_0_420.mp4
+13:53:09
+Saved transcript for segment: segment_2100_2520.mp4
+13:53:48
+Saved transcript for segment: segment_1680_2100.mp4
+13:54:26
+Saved transcript for segment: segment_420_840.mp4
+13:55:04
+Saved transcript for segment: segment_1260_1680.mp4
+13:55:04
+Saved transcript for video: n88FoEmI0KE
+14:06:54
+Saved timestamps and timestamp agent trace for video: n88FoEmI0KE
+14:06:54
+Deleted video files for video: n88FoEmI0KE
+14:06:54
+Saving screenshots
+14:07:03
+Generating paper
+14:08:19
+Total Flash calls: 13
+14:08:19
+Total Pro calls: 7
+14:08:19
+----------------------------------------
+
+
+14:08:19
+All videos processed successfully in 0.82 hours or 0.27 hours/video
