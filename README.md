@@ -2,7 +2,7 @@
 
 ## Current Capability
 
-Provide a youtube video of a lecture and it will extract timestamps of unique slides and a transcript of the lecture.
+Provide a youtube video of a lecture and it will extract timestamps of unique slides and a transcript of the lecture and a generated 'paper'.
 
 ## Methodology
 
@@ -12,6 +12,7 @@ Provide a youtube video of a lecture and it will extract timestamps of unique sl
 4. Ask Gemini 1.5 Flash to make a transcript of each segment with timestamps
 5. Ask Gemini 1.5 Pro to identify slide changes in each segment and why
 6. Ask Gemini 1.5 Flash to read Pro's summary and extract timestamps of new slides only
+7. Ask Gemini 1.5 Pro to write a 'paper' after being provided the images of each slide and what was said about each slide.
 
 ## Current Issues
 
@@ -25,7 +26,7 @@ Provide a youtube video of a lecture and it will extract timestamps of unique sl
   - Gemini 1.5 Pro is free for 50 requests per day.
     - A 50 minute video takes ~7 requests of Pro 
 - FFMPEG
-- Python modules in requirements.txt (including: moviepy, pytube, easyocr, PIL, google.generativeai)
+- Python modules in requirements.txt (including: cv2, moviepy, pytube, easyocr, PIL, google.generativeai)
 
 ## Copyright
 

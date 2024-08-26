@@ -8,7 +8,7 @@ def seconds_to_mmss(seconds):
     seconds = seconds % 60
     return f"{minutes:02}:{seconds:02}"
 
-def generate_timestamps(youtube_id, segment_dir):
+def generate_timestamps(youtube_id, segment_dir, flash_calls, pro_calls):
 
     segment_paths = os.listdir(segment_dir)
     start_timestamps = [int(filename.split('_')[1]) for filename in segment_paths]
@@ -79,7 +79,7 @@ def generate_timestamps(youtube_id, segment_dir):
     print(convo_history)
 
     text_model = genai.GenerativeModel(
-        model_name='gemini-1.5-pro',
+        model_name='gemini-1.5-pro-exp-0801',
         generation_config={'temperature': 0.0}
     )
     tool_model = genai.GenerativeModel(
@@ -98,6 +98,7 @@ def generate_timestamps(youtube_id, segment_dir):
         text_response = text_model.generate_content(
             [initial_prompt + last_message + latest_message, file]
         )
+        pro_calls += 1
         for candidate in text_response.candidates:
             for part in candidate.content.parts:
                 if 'text' in part:
@@ -107,8 +108,8 @@ def generate_timestamps(youtube_id, segment_dir):
         print(latest_message)
         tool_response = tool_model.generate_content(
             [initial_prompt+latest_message+'\nSystem: Please submit ALL the timestamps for Type: NEW SLIDE. If you have decided not to submit any timestamps, please just submit an empty list [].'],
-            tool_config={'function_calling_config': 'ANY'}
         )
+        flash_calls += 1
         tool_message = ""
         for candidate in tool_response.candidates:
             for part in candidate.content.parts:
@@ -137,5 +138,5 @@ def generate_timestamps(youtube_id, segment_dir):
     }, {
         'video_id': youtube_id,
         'timestamp_agent_trace': convo_history
-    }
+    }, flash_calls, pro_calls
 
